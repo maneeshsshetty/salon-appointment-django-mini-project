@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="{% static 'salon/style.css' %}">
+</head>
+<body>
+    <h1>Schedule an Appointment</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Schedule Appointment</button>
+    </form>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Schedule Appointment</title>-->
+<!--    <link rel="stylesheet" href="{% static 'salon/style.css' %}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1>Schedule an Appointment</h1>-->
+<!--        {% if error_message %}-->
+<!--            <p class="error">{{ error_message }}</p>-->
+<!--        {% endif %}-->
+<!--        <form method="post">-->
+<!--            {% csrf_token %}-->
+<!--            {{ form.as_p }}-->
+<!--            <button type="submit">Schedule Appointment</button>-->
+<!--        </form>-->
+<!--        <a href="{% url 'view_appointments' %}">View Appointments</a>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'salon/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Scheduled Appointments</h1>
+        {% if appointments %}
+            <ul>
+                {% for appointment in appointments %}
+                    <li>{{ appointment.customer_name }} - {{ appointment.service }} on {{ appointment.appointment_date }} at {{ appointment.appointment_time }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No appointments scheduled.</p>
+        {% endif %}
+        <a href="{% url 'schedule_appointment' %}">Schedule a New Appointment</a>
+    </div>
+</body>
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>View Appointments</title>-->
+<!--    <link rel="stylesheet" href="{% static 'salon/style.css' %}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1>Scheduled Appointments</h1>-->
+<!--        {% if appointments %}-->
+<!--            <ul>-->
+<!--                {% for appointment in appointments %}-->
+<!--                    <li>{{ appointment.customer_name }} - {{ appointment.service }} on {{ appointment.appointment_date }} at {{ appointment.appointment_time }}</li>-->
+<!--                {% endfor %}-->
+<!--            </ul>-->
+<!--        {% else %}-->
+<!--            <p>No appointments scheduled.</p>-->
+<!--        {% endif %}-->
+<!--        <a href="{% url 'schedule_appointment' %}">Schedule a New Appointment</a>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
